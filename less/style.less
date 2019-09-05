@@ -1,10 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
-@font: "Lato",
-sans-serif;
+//импорт шрифтов
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap);
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(../fonts/BebasNeueBold.otf);
+}
+//переменные сайта
+@font: "Lato",sans-serif;
+@fontButton: 'BebasNeue', serif;
 @colorTheme: #ffc61a;
 @colorLight: #fff;
 @colorDark: #101010;
 @colorBlack: #000;
+@colorButton: @colorBlack;
+@colorButtonText: @colorLight;
+
+//общие стили
 * {
     box-sizing: border-box;
     padding: 0;
@@ -12,7 +22,25 @@ sans-serif;
     font-family: @font;
 }
 
-header {
+//кнопка
+.button {
+    display: inline-block;
+    padding: 10px 35px;
+    background-color: @colorButton;
+    font-family: @fontButton;
+    color: @colorButtonText;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+//заголовок сайта
+.header {
     position: relative;
     min-height: 772px;
     color: @colorLight;
@@ -98,4 +126,71 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+//заказ автомобиля
+.book {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: @colorTheme;
+
+}
+.book-article {
+    justify-self: center;
+    max-width: 550px;
+    &__title {
+        color: @colorBlack;
+        font-size: 35px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        color: @colorDark;
+        font-size: 50px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    &__text {
+        padding: 40px 0;
+        text-align: justify;
+        color: @colorDark;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+.book-form {
+    justify-self: center;
+    width: 422px;
+    background-color: #fff;
+    &__header {
+        padding: 15px 30px;
+        background-color: @colorBlack;
+        color: @colorLight;
+        font-size: 34px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    &__span {
+        color: @colorTheme;
+    }
+    &__table {
+        padding: 30px 30px;
+        margin: 0 auto;
+    }
+    &__input {
+        width: 100%;
+        color: #4b4b4b;
+        font-size: 20px;
+        padding: 10px 0;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 1px solid #e4e4e4;
+
+    }
+    &__submit {
+        width: 100%;
+        margin-top: 20px;
+    }
 }

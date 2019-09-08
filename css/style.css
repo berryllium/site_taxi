@@ -24,6 +24,28 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.section-header {
+  margin: 60px 0;
+  text-align: center;
+}
+.section-header__title {
+  font-size: 35px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffc61a;
+}
+.section-header__subtitle {
+  font-size: 44px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+}
+.section-header__subtitle_light {
+  color: #fff;
+}
+.section-header__subtitle_dark {
+  color: #000;
+}
 .header {
   position: relative;
   min-height: 772px;
@@ -172,4 +194,64 @@
 .book-form__submit {
   width: 100%;
   margin-top: 20px;
+}
+.tariffs-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.tariff {
+  width: 373px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+.tariff__img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+.tariff__header {
+  color: #000;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.tariff__text {
+  color: #101010;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.tariff__price {
+  margin-bottom: 35px;
+  color: #ffc61a;
+  font-size: 44px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.tariff__button {
+  color: #000;
+  background-color: #ffc61a;
+}
+.tariff__star {
+  display: none;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  fill: #ffc61a;
+  z-index: 1;
+}
+.tariff:hover {
+  background: url(../img/triangle.png) 100% 100%, linear-gradient(transparent 15%, #ffc61a 30%);
+  background-repeat: no-repeat;
+}
+.tariff:hover .tariff__price {
+  color: #000;
+}
+.tariff:hover .tariff__button {
+  color: #fff;
+  background-color: #000;
+}
+.tariff:hover .tariff__star {
+  display: block;
 }

@@ -24,8 +24,15 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.button_inverse {
+  color: #000;
+  background-color: #ffc61a;
+}
+section {
+  padding: 70px 0;
+}
 .section-header {
-  margin: 60px 0;
+  padding-bottom: 60px;
   text-align: center;
 }
 .section-header__title {
@@ -255,4 +262,50 @@
 }
 .tariff:hover .tariff__star {
   display: block;
+}
+.pluses {
+  background-image: url(../img/bg-pluses.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pluses-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 100px;
+}
+.plus {
+  color: #fff;
+  max-width: 80%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.plus__img-wrap {
+  grid-row-start: 1;
+  grid-row-end: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc61a;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.plus__header {
+  color: #ffc61a;
+  font-size: 25px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.plus__text {
+  color: #fff;
+  font-size: 18px;
+}
+.plus__button {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  justify-self: center;
 }

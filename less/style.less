@@ -26,10 +26,11 @@ serif;
     margin     : 0;
     font-family: @font;
 }
+
 //контейнер
 .container {
     max-width: 1600px;
-    margin: 0 auto;
+    margin   : 0 auto;
 }
 
 //кнопка
@@ -186,7 +187,7 @@ section {
 
 //заказ автомобиля
 .book {
-    background-color     : @colorTheme;
+    background-color: @colorTheme;
 }
 
 .book-wrap {
@@ -401,4 +402,36 @@ section {
     }
 
 
+}
+
+.app-wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-text {
+    max-width: 500px;
+    margin-top: 80px;
+
+    &__header {
+        color: @colorBlack;
+        font-size  : 25px;
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        max-width: 70%;
+        color      : @colorDark;
+        font-size  : 18px;
+        font-weight: 400;
+        margin-bottom: 65px;
+    }
+    &__link {
+        margin-right: 20px;
+    }
+}
+
+.app-img {
+    align-self: flex-end;
 }

@@ -315,3 +315,30 @@ section {
   grid-column-end: -1;
   justify-self: center;
 }
+.app-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+.app-text {
+  max-width: 500px;
+  margin-top: 80px;
+}
+.app-text__header {
+  color: #000;
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+.app-text__text {
+  max-width: 70%;
+  color: #101010;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 65px;
+}
+.app-text__link {
+  margin-right: 20px;
+}
+.app-img {
+  align-self: flex-end;
+}

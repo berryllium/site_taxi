@@ -405,28 +405,29 @@ section {
 }
 
 .app-wrap {
-    display: flex;
+    display        : flex;
     justify-content: space-around;
 }
 
 .app-text {
-    max-width: 500px;
+    max-width : 500px;
     margin-top: 80px;
 
     &__header {
-        color: @colorBlack;
-        font-size  : 25px;
-        font-weight: 900;
+        color        : @colorBlack;
+        font-size    : 25px;
+        font-weight  : 900;
         margin-bottom: 30px;
     }
 
     &__text {
-        max-width: 70%;
-        color      : @colorDark;
-        font-size  : 18px;
-        font-weight: 400;
+        max-width    : 70%;
+        color        : @colorDark;
+        font-size    : 18px;
+        font-weight  : 400;
         margin-bottom: 65px;
     }
+
     &__link {
         margin-right: 20px;
     }
@@ -434,4 +435,23 @@ section {
 
 .app-img {
     align-self: flex-end;
+}
+
+.call24 {
+    text-align      : center;
+    background-color: @colorTheme;
+    color           : @colorBlack;
+
+    &__text {
+        font-size     : 35px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__number {
+        color         : @colorBlack;
+        font-size     : 77px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
 }

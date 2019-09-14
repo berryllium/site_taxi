@@ -339,6 +339,9 @@ section {
 .app-text__link {
   margin-right: 20px;
 }
+.application {
+  padding-bottom: 0;
+}
 .app-img {
   align-self: flex-end;
 }

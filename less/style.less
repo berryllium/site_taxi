@@ -432,9 +432,11 @@ section {
         margin-right: 20px;
     }
 }
+
 .application {
     padding-bottom: 0;
 }
+
 .app-img {
     align-self: flex-end;
 }
@@ -454,6 +456,84 @@ section {
     &__number {
         color         : @colorBlack;
         font-size     : 77px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+}
+
+.clients {
+    background     : url(../img/bg-clients.jpg);
+    background-size: cover;
+
+    &__wrap {
+        display        : flex;
+        justify-content: center;
+        padding        : 40px 0;
+
+
+    }
+
+    &__item {
+        position        : relative;
+        max-width       : 40%;
+        margin          : 0 15px;
+        box-sizing      : border-box;
+        border-radius   : 50px;
+        background-color: @colorBlack;
+        padding         : 40px;
+        color           : @colorLight;
+
+        &:after {
+            position  : absolute;
+            content   : '';
+            border    : 15px solid transparent;
+            border-top: 15px solid @colorBlack;
+            bottom    : -30px;
+        }
+
+        &:first-child:after {
+            right      : 80px;
+            border-left: 15px solid @colorBlack;
+        }
+
+        &:last-child:after {
+            left        : 80px;
+            border-right: 15px solid @colorBlack;
+        }
+    }
+
+    &__text {
+        color        : @colorLight;
+        font-size    : 18px;
+        margin-bottom: 20px;
+    }
+
+    &__info {
+        display              : grid;
+        grid-template-columns: minmax(100px, 1fr) 4fr;
+        grid-template-areas  :
+            'c-img c-name'
+            'c-img c-voc';
+    }
+
+    &__img {
+        grid-area : c-img;
+        align-self: center;
+    }
+
+    &__name {
+        grid-area     : c-name;
+        align-self    : end;
+        color         : @colorTheme;
+        font-size     : 25px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__vocation {
+        grid-area     : c-voc;
+        align-self    : start;
+        font-size     : 18px;
         font-weight   : 900;
         text-transform: uppercase;
     }

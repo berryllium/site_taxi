@@ -8,7 +8,7 @@
 }
 
 //переменные сайта
-@font : "Lato",
+@font : 'Lato',
 sans-serif;
 @fontButton : 'BebasNeue',
 serif;
@@ -99,7 +99,7 @@ section {
     grid-column-gap      : 20px;
     grid-template-columns: 2fr 4fr 6fr;
     grid-template-rows   : 1fr 1fr 6fr;
-    grid-template-areas  : "header-logo . header-nav"". . .""header-text header-text header-text";
+    grid-template-areas  : 'header-logo . header-nav''. . .''header-text header-text header-text';
 }
 
 .header-logo {
@@ -538,3 +538,98 @@ section {
         text-transform: uppercase;
     }
 }
+
+.footer {
+    background: url(../img/bg-footer.jpg);
+    color     : @colorLight;
+
+    &__wrap {
+        display        : flex;
+        justify-content: space-between;
+        padding        : 90px 100px;
+    }
+
+    &__item {
+        width: 25%;
+    }
+
+    &__header {
+        font-size     : 25px;
+        font-weight   : 900;
+        text-transform: uppercase;
+        margin-bottom : 38px
+    }
+
+    &__separator {
+        height          : 8px;
+        background-color: @colorTheme;
+        margin-bottom   : 46px;
+    }
+
+    &__text {
+        font-size    : 18px;
+        margin-bottom: 40px;
+    }
+
+    &__social-item {
+        color       : @colorTheme;
+        font-size   : 20px;
+        margin-right: 15px;
+    }
+
+    &__app-links {
+        display              : grid;
+        grid-template-columns: 3fr 1fr 2fr;
+        grid-template-areas  : 'label1 icon1 .''label2 icon2 .';
+        grid-row-gap         : 20px;
+        align-items          : center;
+    }
+
+    &__app-label {
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        display: block;
+        color  : @colorTheme;
+        font-size            : 20px;
+
+
+        &:ndth-chil(1) {
+            grid-area: label1;
+        }
+
+        &:nth-child(2) {
+            grid-area: label2;
+        }
+    }
+
+    &__app-icon {
+        font-size: 36px;
+
+        &:first-child {
+            grid-area: icon1;
+        }
+
+        &:last-child {
+            grid-area: icon2;
+        }
+    }
+
+    &__copy {
+        background-color: @colorBlack;
+        padding         : 20px 0;
+        text-align      : center;
+        font-size       : 14px;
+        letter-spacing  : 0.7px;
+    }
+
+}
+
+    .contacts {
+        font-size: 18px;
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 10fr;
+            grid-gap: 30px 10px;
+        }
+    }

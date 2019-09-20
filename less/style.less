@@ -1,95 +1,149 @@
+// out: ../css/style.css
 //импорт шрифтов
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap);
+
 @font-face {
     font-family: 'BebasNeue';
-    src: url(../fonts/BebasNeueBold.otf);
+    src        : url(../fonts/BebasNeueBold.otf);
 }
+
 //переменные сайта
-@font: "Lato",sans-serif;
-@fontButton: 'BebasNeue', serif;
-@colorTheme: #ffc61a;
-@colorLight: #fff;
-@colorDark: #101010;
-@colorBlack: #000;
-@colorButton: @colorBlack;
+@font : 'Lato',
+sans-serif;
+@fontButton : 'BebasNeue',
+serif;
+@colorTheme     : #ffc61a;
+@colorLight     : #fff;
+@colorDark      : #101010;
+@colorBlack     : #000;
+@colorButton    : @colorBlack;
 @colorButtonText: @colorLight;
 
 //общие стили
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    box-sizing : border-box;
+    padding    : 0;
+    margin     : 0;
     font-family: @font;
+}
+
+//контейнер
+.container {
+    max-width: 1600px;
+    margin   : 0 auto;
 }
 
 //кнопка
 .button {
-    display: inline-block;
-    padding: 10px 35px;
+    display         : inline-block;
+    padding         : 10px 35px;
     background-color: @colorButton;
-    font-family: @fontButton;
-    color: @colorButtonText;
-    font-size: 30px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    font-family     : @fontButton;
+    color           : @colorButtonText;
+    font-size       : 30px;
+    font-weight     : 400;
+    text-transform  : uppercase;
+    text-decoration : none;
+    outline         : none;
+    border          : none;
+    border-radius   : 10px;
+    cursor          : pointer;
+
+    &_inverse {
+        color           : @colorBlack;
+        background-color: @colorTheme;
+    }
 }
+
+section {
+    padding: 70px 0;
+}
+
+.section-header {
+    padding-bottom: 60px;
+    text-align    : center;
+}
+
+.section-header__title {
+    font-size     : 35px;
+    font-weight   : 900;
+    text-transform: uppercase;
+    color         : @colorTheme;
+}
+
+.section-header__subtitle {
+    font-size     : 44px;
+    font-weight   : 900;
+    text-transform: uppercase;
+    color         : @colorBlack;
+
+    &_light {
+        color: @colorLight;
+    }
+
+    &_dark {
+        color: @colorBlack;
+    }
+}
+
 
 //заголовок сайта
 .header {
-    position: relative;
-    min-height: 772px;
-    color: @colorLight;
-    background: url(../img/header-bg.png) no-repeat;
-    background-size: cover;
-    display: grid;
-    align-items: center;
-    grid-column-gap: 20px;
+    position             : relative;
+    min-height           : 772px;
+    color                : @colorLight;
+    background           : url(../img/header-bg.png) no-repeat;
+    background-size      : cover;
+    display              : grid;
+    align-items          : center;
+    grid-column-gap      : 20px;
     grid-template-columns: 2fr 4fr 6fr;
-    grid-template-rows: 1fr 1fr 6fr;
-    grid-template-areas: "header-logo . header-nav" ". . ." "header-text header-text header-text";
+    grid-template-rows   : 1fr 1fr 6fr;
+    grid-template-areas  : 'header-logo . header-nav''. . .''header-text header-text header-text';
 }
 
 .header-logo {
-    grid-area: header-logo;
+    grid-area   : header-logo;
     justify-self: center;
+
     &__title {
-        font-size: 40px;
+        font-size  : 40px;
         font-weight: 900;
-        color: @colorLight;
+        color      : @colorLight;
     }
+
     &__span {
-        color: @colorTheme;
+        color         : @colorTheme;
         text-transform: uppercase;
     }
+
     &__subtitle {
-        font-size: 15px;
+        font-size     : 15px;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
 }
 
 .header-nav {
-    grid-area: header-nav;
-    display: flex;
+    grid-area      : header-nav;
+    display        : flex;
     justify-content: space-between;
-    padding-right: 70px;
+    padding-right  : 70px;
+
     &__item {
-        color: @colorLight;
-        font-weight: 900;
-        font-size: 17px;
+        color          : @colorLight;
+        font-weight    : 900;
+        font-size      : 17px;
         text-decoration: none;
-        text-transform: uppercase;
-        padding: 3px 7px;
-        border-radius: 30px;
+        text-transform : uppercase;
+        padding        : 3px 7px;
+        border-radius  : 30px;
+
         &:hover {
             background-color: @colorTheme;
-            color: @colorDark;
+            color           : @colorDark;
         }
+
         &:active {
             outline: none;
         }
@@ -97,100 +151,485 @@
 }
 
 .header-text {
-    grid-area: header-text;
-    align-self: start;
+    grid-area   : header-text;
+    align-self  : start;
     justify-self: center;
-    font-weight: 900;
-    text-align: center;
+    font-weight : 900;
+    text-align  : center;
+
     &__title {
-        color: @colorTheme;
-        font-size: 36px;
+        color         : @colorTheme;
+        font-size     : 36px;
         text-transform: uppercase;
     }
+
     &__phone {
-        font-size: 72px;
+        font-size     : 72px;
         text-transform: uppercase;
     }
+
     &__site {
-        font-size: 20px;
-        font-weight: 900;
+        font-size     : 20px;
+        font-weight   : 900;
         text-transform: uppercase;
-        text-align: left;
+        text-align    : left;
         letter-spacing: 12px;
     }
 }
 
 .header-img {
-    position: absolute;
-    bottom: -120px;
-    width: 100%;
-    display: flex;
+    position       : absolute;
+    bottom         : -120px;
+    width          : 100%;
+    display        : flex;
     justify-content: center;
 }
 
 //заказ автомобиля
 .book {
-    padding-top: 150px;
-    padding-bottom: 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: @colorTheme;
-
 }
+
+.book-wrap {
+    padding-top          : 150px;
+    padding-bottom       : 80px;
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .book-article {
     justify-self: center;
-    max-width: 550px;
+    max-width   : 550px;
+
     &__title {
-        color: @colorBlack;
-        font-size: 35px;
-        font-weight: 900;
+        color         : @colorBlack;
+        font-size     : 35px;
+        font-weight   : 900;
         text-transform: uppercase;
     }
+
     &__subtitle {
-        color: @colorDark;
-        font-size: 50px;
-        font-weight: 900;
+        color         : @colorDark;
+        font-size     : 50px;
+        font-weight   : 900;
         text-transform: uppercase;
     }
+
     &__text {
-        padding: 40px 0;
-        text-align: justify;
-        color: @colorDark;
-        font-size: 18px;
+        padding    : 40px 0;
+        text-align : justify;
+        color      : @colorDark;
+        font-size  : 18px;
         font-weight: 400;
     }
 }
+
 .book-form {
-    justify-self: center;
-    width: 422px;
+    justify-self    : center;
+    width           : 422px;
     background-color: #fff;
+
     &__header {
-        padding: 15px 30px;
+        padding         : 15px 30px;
         background-color: @colorBlack;
-        color: @colorLight;
-        font-size: 34px;
-        font-weight: 900;
-        text-transform: uppercase;
+        color           : @colorLight;
+        font-size       : 34px;
+        font-weight     : 900;
+        text-transform  : uppercase;
     }
+
     &__span {
         color: @colorTheme;
     }
+
     &__table {
         padding: 30px 30px;
-        margin: 0 auto;
-    }
-    &__input {
-        width: 100%;
-        color: #4b4b4b;
-        font-size: 20px;
-        padding: 10px 0;
-        margin: 10px 0;
-        border: none;
-        border-bottom: 1px solid #e4e4e4;
+        margin : 0 auto;
 
     }
+
+    &__input {
+        width        : 100%;
+        color        : #4b4b4b;
+        font-size    : 20px;
+        padding      : 20px 0;
+        border       : none;
+        border-bottom: 1px solid #e4e4e4;
+        outline      : none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
     &__submit {
-        width: 100%;
+        width     : 100%;
         margin-top: 20px;
     }
 }
+
+// секция тарифов
+.tariffs-wrap {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-evenly;
+}
+
+.tariff {
+    width           : 373px;
+    padding         : 30px;
+    text-align      : center;
+    position        : relative;
+    background-color: #f5f4f2;
+
+    &__img {
+        max-width    : 100%;
+        margin-bottom: 30px;
+    }
+
+    &__header {
+        color         : @colorBlack;
+        font-size     : 30px;
+        font-weight   : 900;
+        text-transform: uppercase;
+        margin-bottom : 30px;
+    }
+
+    &__text {
+        color        : @colorDark;
+        font-size    : 18px;
+        margin-bottom: 35px;
+    }
+
+    &__price {
+        margin-bottom : 35px;
+        color         : @colorTheme;
+        font-size     : 44px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__button {
+        color           : @colorBlack;
+        background-color: @colorTheme;
+    }
+
+    &__star {
+        display : none;
+        position: absolute;
+        right   : 10px;
+        bottom  : 10px;
+        fill    : @colorTheme;
+        z-index : 1;
+    }
+
+    &:hover {
+        background       : url(../img/triangle.png) 100% 100%, linear-gradient(transparent 15%, @colorTheme 30%);
+        background-repeat: no-repeat;
+
+        .tariff__price {
+            color: @colorBlack;
+        }
+
+        .tariff__button {
+            color           : @colorLight;
+            background-color: @colorBlack;
+        }
+
+        .tariff__star {
+            display: block;
+        }
+
+
+
+    }
+
+}
+
+.pluses {
+    background-image : url(../img/bg-pluses.jpg);
+    background-repeat: no-repeat;
+    background-size  : cover;
+}
+
+.pluses-wrap {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows   : 1fr 1fr;
+    grid-row-gap         : 100px;
+
+}
+
+.plus {
+    color                : @colorLight;
+    max-width            : 80%;
+    align-self           : center;
+    justify-self         : center;
+    display              : grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows   : 1fr 1fr 1fr;
+
+    &__img-wrap {
+        grid-row-start  : 1;
+        grid-row-end    : -1;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        background-color: @colorTheme;
+        width           : 80px;
+        height          : 80px;
+        border-radius   : 50%;
+    }
+
+    &__header {
+
+        color         : @colorTheme;
+        font-size     : 25px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color    : @colorLight;
+        font-size: 18px;
+    }
+
+    &__button {
+        grid-column-start: 1;
+        grid-column-end  : -1;
+        justify-self     : center;
+    }
+
+
+}
+
+.app-wrap {
+    display        : flex;
+    justify-content: space-around;
+}
+
+.app-text {
+    max-width : 500px;
+    margin-top: 80px;
+
+    &__header {
+        color        : @colorBlack;
+        font-size    : 25px;
+        font-weight  : 900;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        max-width    : 70%;
+        color        : @colorDark;
+        font-size    : 18px;
+        font-weight  : 400;
+        margin-bottom: 65px;
+    }
+
+    &__link {
+        margin-right: 20px;
+    }
+}
+
+.application {
+    padding-bottom: 0;
+}
+
+.app-img {
+    align-self: flex-end;
+}
+
+.call24 {
+    text-align      : center;
+    background-color: @colorTheme;
+    color           : @colorBlack;
+
+
+    &__text {
+        font-size     : 35px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__number {
+        color         : @colorBlack;
+        font-size     : 77px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+}
+
+.clients {
+    background     : url(../img/bg-clients.jpg);
+    background-size: cover;
+
+    &__wrap {
+        display        : flex;
+        justify-content: center;
+        padding        : 40px 0;
+
+
+    }
+
+    &__item {
+        position        : relative;
+        max-width       : 40%;
+        margin          : 0 15px;
+        box-sizing      : border-box;
+        border-radius   : 50px;
+        background-color: @colorBlack;
+        padding         : 40px;
+        color           : @colorLight;
+
+        &:after {
+            position  : absolute;
+            content   : '';
+            border    : 15px solid transparent;
+            border-top: 15px solid @colorBlack;
+            bottom    : -30px;
+        }
+
+        &:first-child:after {
+            right      : 80px;
+            border-left: 15px solid @colorBlack;
+        }
+
+        &:last-child:after {
+            left        : 80px;
+            border-right: 15px solid @colorBlack;
+        }
+    }
+
+    &__text {
+        color        : @colorLight;
+        font-size    : 18px;
+        margin-bottom: 20px;
+    }
+
+    &__info {
+        display              : grid;
+        grid-template-columns: minmax(100px, 1fr) 4fr;
+        grid-template-areas  :
+            'c-img c-name'
+            'c-img c-voc';
+    }
+
+    &__img {
+        grid-area : c-img;
+        align-self: center;
+    }
+
+    &__name {
+        grid-area     : c-name;
+        align-self    : end;
+        color         : @colorTheme;
+        font-size     : 25px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+
+    &__vocation {
+        grid-area     : c-voc;
+        align-self    : start;
+        font-size     : 18px;
+        font-weight   : 900;
+        text-transform: uppercase;
+    }
+}
+
+.footer {
+    background: url(../img/bg-footer.jpg);
+    color     : @colorLight;
+
+    &__wrap {
+        display        : flex;
+        justify-content: space-between;
+        padding        : 90px 100px;
+    }
+
+    &__item {
+        width: 25%;
+    }
+
+    &__header {
+        font-size     : 25px;
+        font-weight   : 900;
+        text-transform: uppercase;
+        margin-bottom : 38px
+    }
+
+    &__separator {
+        height          : 8px;
+        background-color: @colorTheme;
+        margin-bottom   : 46px;
+    }
+
+    &__text {
+        font-size    : 18px;
+        margin-bottom: 40px;
+    }
+
+    &__social-item {
+        color       : @colorTheme;
+        font-size   : 20px;
+        margin-right: 15px;
+    }
+
+    &__app-links {
+        display              : grid;
+        grid-template-columns: 3fr 1fr 2fr;
+        grid-template-areas  : 'label1 icon1 .''label2 icon2 .';
+        grid-row-gap         : 20px;
+        align-items          : center;
+    }
+
+    &__app-label {
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        display: block;
+        color  : @colorTheme;
+        font-size            : 20px;
+
+
+        &:ndth-chil(1) {
+            grid-area: label1;
+        }
+
+        &:nth-child(2) {
+            grid-area: label2;
+        }
+    }
+
+    &__app-icon {
+        font-size: 36px;
+
+        &:first-child {
+            grid-area: icon1;
+        }
+
+        &:last-child {
+            grid-area: icon2;
+        }
+    }
+
+    &__copy {
+        background-color: @colorBlack;
+        padding         : 20px 0;
+        text-align      : center;
+        font-size       : 14px;
+        letter-spacing  : 0.7px;
+    }
+
+}
+
+    .contacts {
+        font-size: 18px;
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 10fr;
+            grid-gap: 30px 10px;
+        }
+    }

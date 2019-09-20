@@ -105,6 +105,8 @@ section {
 .header-logo {
     grid-area   : header-logo;
     justify-self: center;
+    text-decoration: none;
+    color: @colorLight;
 
     &__title {
         font-size  : 40px;
@@ -198,7 +200,7 @@ section {
 }
 
 .book-article {
-    justify-self: center;
+    justify-self: left;
     max-width   : 550px;
 
     &__title {
@@ -225,7 +227,7 @@ section {
 }
 
 .book-form {
-    justify-self    : center;
+    justify-self    : right;
     width           : 422px;
     background-color: #fff;
 
@@ -273,7 +275,7 @@ section {
 .tariffs-wrap {
     display        : flex;
     flex-wrap      : wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .tariff {
@@ -364,11 +366,12 @@ section {
 .plus {
     color                : @colorLight;
     max-width            : 80%;
-    align-self           : center;
-    justify-self         : center;
     display              : grid;
     grid-template-columns: 100px 1fr;
     grid-template-rows   : 1fr 1fr 1fr;
+    &:nth-child(even) {
+        align-self: right;
+    }
 
     &__img-wrap {
         grid-row-start  : 1;

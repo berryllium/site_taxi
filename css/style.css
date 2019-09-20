@@ -73,6 +73,8 @@ section {
 .header-logo {
   grid-area: header-logo;
   justify-self: center;
+  text-decoration: none;
+  color: #fff;
 }
 .header-logo__title {
   font-size: 40px;
@@ -150,7 +152,7 @@ section {
   grid-template-columns: 1fr 1fr;
 }
 .book-article {
-  justify-self: center;
+  justify-self: left;
   max-width: 550px;
 }
 .book-article__title {
@@ -173,7 +175,7 @@ section {
   font-weight: 400;
 }
 .book-form {
-  justify-self: center;
+  justify-self: right;
   width: 422px;
   background-color: #fff;
 }
@@ -211,7 +213,7 @@ section {
 .tariffs-wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .tariff {
   width: 373px;
@@ -283,11 +285,12 @@ section {
 .plus {
   color: #fff;
   max-width: 80%;
-  align-self: center;
-  justify-self: center;
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+.plus:nth-child(even) {
+  align-self: right;
 }
 .plus__img-wrap {
   grid-row-start: 1;

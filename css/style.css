@@ -87,6 +87,8 @@ section {
   font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: @colorWhite;
+  text-decoration: none;
 }
 .header-nav {
   grid-area: header-nav;

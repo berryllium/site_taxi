@@ -73,12 +73,12 @@ section {
 .header-logo {
   grid-area: header-logo;
   justify-self: center;
+  color: white;
   text-decoration: none;
 }
 .header-logo__title {
   font-size: 40px;
   font-weight: 900;
-  color: #fff;
 }
 .header-logo__span {
   color: #ffc61a;

@@ -73,6 +73,7 @@ section {
 .header-logo {
   grid-area: header-logo;
   justify-self: center;
+  text-decoration: none;
 }
 .header-logo__title {
   font-size: 40px;
@@ -87,8 +88,7 @@ section {
   font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: @colorWhite;
-  text-decoration: none;
+  color: #fff;
 }
 .header-nav {
   grid-area: header-nav;
